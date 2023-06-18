@@ -12,7 +12,8 @@ public class LineGeneratorTests
         const uint lineNumber = 11;
         const char lineCharacter = 'K';
         const uint lineLength = (lineNumber * 2) + 1;
-        var line = lineGenerator.Generate(lineNumber, lineCharacter, 0, 22, lineLength);
+        var lineParameters = new LineParameters(lineNumber, lineCharacter, 0, 22, lineLength);
+        var line = lineGenerator.Generate(lineParameters);
         var expectedCharArray = new[]
         {
             lineCharacter,
@@ -51,7 +52,8 @@ public class LineGeneratorTests
         const uint lineNumber = 11;
         const char lineCharacter = 'K';
         const uint lineLength = (lineNumber * 2) + 1;
-        var line = lineGenerator.Generate(lineNumber, lineCharacter, 0, 22, lineLength);
+        var lineParameters = new LineParameters(lineNumber, lineCharacter, 0, 22, lineLength);
+        var line = lineGenerator.Generate(lineParameters);
         var expectedCharArray = new[]
         {
             lineCharacter,

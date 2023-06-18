@@ -9,23 +9,26 @@ public class LineGenerator
     
     public char SpaceSeparator { get; }
 
-    public Tuple<uint, char[]> Generate(
-        uint lineNumber, 
-        char lineCharacter, 
-        uint firstCharIndex, 
-        uint lastCharIndex, 
-        uint lineLength)
+    public async Task<Tuple<uint, char[]>> GenerateAsync(LineParameters lineParameters)
     {
-        var lineCharacters = new char[lineLength];
+        return await Task.Run(() => Generate(lineParameters));
+    }
+
+    public Tuple<uint, char[]> Generate(
+        LineParameters lineParameters)
+
+    {
+        var lineCharacters = new char[lineParameters.LineLength];
         // set all items in the array to the space separator character
         for (var index = 0; index < lineCharacters.Length; index++)
         {
             lineCharacters[index] = SpaceSeparator;
         }
+
         // overwrite firstCharIndex with the lineCharacter
-        lineCharacters[firstCharIndex] = lineCharacter;
+        lineCharacters[lineParameters.FirstCharIndex] = lineParameters.LineCharacter;
         // overwrite lastCharIndex with the lineCharacter
-        lineCharacters[lastCharIndex] = lineCharacter;
-        return new Tuple<uint, char[]>(lineNumber, lineCharacters);
+        lineCharacters[lineParameters.LastCharIndex] = lineParameters.LineCharacter;
+        return new Tuple<uint, char[]>(lineParameters.LineNumber, lineCharacters);
     }
 }

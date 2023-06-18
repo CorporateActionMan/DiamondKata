@@ -7,11 +7,11 @@ public class DiamondGeneratorTests
 {
     [Theory]
     [MemberData(nameof(DiamondScenarios))]
-    public void CanGenerateAnExpectedDiamond(char targetCharacter, IEnumerable<Tuple<uint, char[]>> expectedLines)
+    public async Task CanGenerateAnExpectedDiamond(char targetCharacter, IEnumerable<Tuple<uint, char[]>> expectedLines)
     {
         ConfigurationObject configurationObject = new ConfigurationObject('A', '*');
         DiamondGenerator diamondGenerator = new DiamondGenerator(configurationObject);
-        CharacterDiamond characterDiamond = diamondGenerator.Generate(targetCharacter);
+        CharacterDiamond characterDiamond = await diamondGenerator.Generate(targetCharacter);
  
 
         characterDiamond.Data.Should().BeEquivalentTo(expectedLines);

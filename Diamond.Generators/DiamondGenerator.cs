@@ -11,7 +11,7 @@ public class DiamondGenerator
     
     public ConfigurationObject ConfigurationObject { get;  }
 
-    public CharacterDiamond Generate(char targetCharacter)
+    public async Task<CharacterDiamond> Generate(char targetCharacter)
     {
         // find the number of lines
         var initialCharValue = (int)ConfigurationObject.InitialChar;
@@ -21,12 +21,11 @@ public class DiamondGenerator
         var lineGenerator = new LineGenerator(ConfigurationObject.SpacingChar);
         var firstCharIndex = (axisLength - 1) / 2;
         var lastCharIndex = firstCharIndex;
-        var data = new List<Tuple<uint, char[]>>();
         uint lineNumber = 1;
+        var lineParameters = new List<LineParameters>();
         for (var charIterator = initialCharValue; charIterator <= targetCharValue; charIterator++)
         {
-            var lineData = lineGenerator.Generate(lineNumber, (char)charIterator, firstCharIndex,lastCharIndex, axisLength);
-            data.Add(lineData);
+            lineParameters.Add(new LineParameters(lineNumber, (char)charIterator, firstCharIndex,lastCharIndex, axisLength));
             if (firstCharIndex > 0)
             {
                 firstCharIndex--;
@@ -39,11 +38,12 @@ public class DiamondGenerator
         {
             firstCharIndex++;
             lastCharIndex--;
-            var lineData = lineGenerator.Generate(lineNumber, (char)charIterator, firstCharIndex,lastCharIndex, axisLength);
-            data.Add(lineData);
+            lineParameters.Add(new LineParameters(lineNumber, (char)charIterator, firstCharIndex,lastCharIndex, axisLength));
             lineNumber++;
         }
 
+        var tasks = lineParameters.Select(lp => lineGenerator.GenerateAsync(lp)).ToArray();
+        var data = await Task.WhenAll(tasks);
         return new CharacterDiamond(data);
     }
 }
