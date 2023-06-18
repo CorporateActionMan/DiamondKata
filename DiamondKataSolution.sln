@@ -6,6 +6,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diamond.Config.Tests", "UnitTests\Diamond.Config.Tests\Diamond.Config.Tests.csproj", "{8692E548-8D41-4139-A809-18F297A651B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diamond.Generators", "Diamond.Generators\Diamond.Generators.csproj", "{17450A94-2AB7-473E-9C88-F5993A11A7AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diamond.Generators.Tests", "UnitTests\Diamond.Generators.Tests\Diamond.Generators.Tests.csproj", "{3EF4ADF5-F93C-4CD8-8E65-5F67C03D28FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +24,17 @@ Global
 		{8692E548-8D41-4139-A809-18F297A651B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8692E548-8D41-4139-A809-18F297A651B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8692E548-8D41-4139-A809-18F297A651B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17450A94-2AB7-473E-9C88-F5993A11A7AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17450A94-2AB7-473E-9C88-F5993A11A7AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17450A94-2AB7-473E-9C88-F5993A11A7AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17450A94-2AB7-473E-9C88-F5993A11A7AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EF4ADF5-F93C-4CD8-8E65-5F67C03D28FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EF4ADF5-F93C-4CD8-8E65-5F67C03D28FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EF4ADF5-F93C-4CD8-8E65-5F67C03D28FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EF4ADF5-F93C-4CD8-8E65-5F67C03D28FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8692E548-8D41-4139-A809-18F297A651B5} = {A7AFBC1B-4A50-4463-BA6C-45C9D3EA0BF3}
+		{3EF4ADF5-F93C-4CD8-8E65-5F67C03D28FC} = {A7AFBC1B-4A50-4463-BA6C-45C9D3EA0BF3}
 	EndGlobalSection
 EndGlobal
