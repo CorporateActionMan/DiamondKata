@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Diamond.Config\Diamond.Config\Diamond.Config.csproj" />
+    </ItemGroup>
+
 </Project>
