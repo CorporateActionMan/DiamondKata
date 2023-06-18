@@ -23,4 +23,9 @@
         </PackageReference>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\Diamond.Config\Diamond.Config\Diamond.Config.csproj" />
+      <ProjectReference Include="..\..\Diamond.Generators\Diamond.Generators.csproj" />
+    </ItemGroup>
+
 </Project>
