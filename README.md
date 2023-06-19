@@ -2,13 +2,17 @@
 Repository to solve the Diamond Kata
 
 # Instructions
+1. Watch the videos:
+    - Testing: https://clipchamp.com/watch/QYNTPvWeESJ
+    - Running the App: https://clipchamp.com/watch/4iEbqGBSTB0
 1. Clone this repository
 1. Open up the .Net solution in the IDE of your choice. The following IDEs have been tested:
-    - Rider
-    - Visual studio Community Edition
-    - VS Code
+    - Rider 2023.1.2
+    - Visual studio 2022 Community Edition
 1. Build the Code
 1. Run the tests
+    - via the IDE
+    - via the CLI from the repo's root directory `dotnet test`
 1. Choose how you are going to run the application:
     - Console App via IDE
     - Console App via shell

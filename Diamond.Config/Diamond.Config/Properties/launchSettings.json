@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Diamond.Config": {
+      "commandName": "Project",
+      "commandLineArgs": "-i C -t P -s ^"
+    }
+  }
+}
